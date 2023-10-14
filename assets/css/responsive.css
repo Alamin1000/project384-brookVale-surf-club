@@ -1,0 +1,188 @@
+
+/*========== XL-DESKTOP : BETWEEN 1200px TO 1500PX. ==========*/
+@media (min-width: 1200px) and (max-width: 1500px) {
+   /* GLOBAL */
+   .container {
+      max-width: 1120px;
+   }
+   h1 {font-size: 80px;}
+   h2 {font-size: 45px;}
+   h3 {font-size: 35px;}
+   /* GLOBAL// */
+}
+
+/*========== LG + MD : BETWEEN 768PX TO 1199PX. ==========*/
+@media (min-width: 768px) and (max-width: 1199px) {
+   /* GLOBAL */
+   h1 {font-size: 45px;}
+   h2 {font-size: 38px;}
+   h3 {font-size: 30px;}
+   h4 {font-size: 25px;}
+   h5 {font-size: 20px;}
+   h6 {font-size: 15px;}
+   body {
+      font-size: 15px;
+   }
+   /* GLOBAL// */
+}
+
+/*========== LG-DESKTOP : BETWEEN 992PX TO 1199px. ==========*/
+@media (min-width: 992px) and (max-width: 1199px) {
+   /* GLOBAL */
+   .container {
+      max-width: 920px;
+   }
+   /* GLOBAL// */
+}
+
+/*========== MD-TABLET : BETWEEN 768PX TO 991PX ==========*/
+@media (min-width: 768px) and (max-width: 991px) {
+   /* GLOBAL */
+   .container {
+      max-width: 750px;
+   }
+   /* GLOBAL// */
+}
+
+/*========== SMALL MOBILE : SMALLER THEN 767PX ==========*/
+@media (max-width: 767px) {
+   /* GLOBAL */
+   h1 {font-size: 32px;}
+   h2 {font-size: 24px;}
+   h3 {font-size: 22px;}
+   h4 {font-size: 20px;}
+   h5 {font-size: 18px;}
+   h6 {font-size: 14px;}
+   body {
+      font-size: 14px;
+   }
+   /* GLOBAL// */
+
+   /* HEADER AREA */
+   .logo img {
+      max-width: 80px;
+   }
+   /* HEADER AREA// */
+}
+
+/*========== LARGE MOBILE : BETWEEN 480PX TO 767PX ==========*/
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+   .container {
+      max-width: 450px;
+   }
+}
+
+
+
+@media (max-width: 1399px) {
+   .h4 {
+      font-size: 16px;
+      margin-bottom: 18px;
+   }
+   .h3 {
+      font-size: 32px;
+      margin-bottom: 25px;
+   }
+   .label-x {
+      font-size: 14px;;
+   }
+   .form__box__title {
+      margin-bottom: 45px;
+   }
+   .single-input-x {
+      margin-bottom: 21px;
+   }
+   .form__box {
+      width: 460px;
+   }
+   .form-section {
+      padding: 60px 0;
+   }
+   .footer-section {
+      padding: 60px 0 4px;
+   }
+
+   .check-label-x {
+      gap: 22px;
+   }
+
+   .gallery-section__title {
+      padding: 0;
+      margin-bottom: 60px;
+   }
+   .gallery-section {
+      padding: 60px 0 50px;
+   }
+
+   .event-single__content h2 {
+      font-size: 36px;
+      margin-bottom: 34px;
+   }
+   .event-single__content {
+      padding: 70px 0 80px;
+   }
+   .event-single__tmg {
+      height: 543px;
+   }
+}
+
+
+@media (max-width: 1199px) {
+   .footer-section__inner {
+      padding: 0;
+   }
+
+   .gallery-section__inner {
+      padding: 0;
+   }
+   .gallery-grid {
+      --bs-gutter-x: 12px;
+   }
+}
+
+
+@media (max-width: 991px) {
+   .footer-menu {
+      margin-bottom: 70px;
+   }
+   .footer-bottom {
+      margin-top: 0;
+   }
+   .footer-section {
+      padding: 50px 0;
+   }
+
+   .page-title-section {
+      height: 260px;
+   }
+
+   .event-single__content {
+      text-align: center;
+   }
+}
+
+
+@media (max-width: 768px) {
+
+}
+
+
+@media (max-width: 575px) {
+
+}
+
+
+@media (max-width: 370px) {
+   .footer-menu ul li a {
+      font-size: 14px;
+   }
+
+   .h3 {
+      font-size: 27px;
+   }
+
+   .event-single__content h2 {
+      font-size: 31px;
+      margin-bottom: 30px;
+   }
+}
