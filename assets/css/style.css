@@ -47,7 +47,7 @@ h6 {
    font-weight: 700;
    line-height: 1.4;
 }
-h1 {font-size: 95px;}
+h1 {font-size: 100px;}
 h2 {font-size: 48px;}
 h3 {font-size: 40px;}
 h4 {font-size: 32px;}
@@ -170,11 +170,37 @@ footer,
    background-repeat: no-repeat;
    background-color: var(--gray-color);
 }
+.el-bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
 /*========== GLOBAL CSS// ==========*/
 
 /*========== HEADER AREA ==========*/
+.slide-overlay{
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	background: var(--heading-color);
+	z-index: 999;
+   transition: .6s ease;
+   pointer-events: none;
+}
+.slide-overlay.hide{
+   transform: translate(-100%);
+}
+
 .header-area .container{
    max-width: 1440px;
+}
+.container {
+   padding: 0 24px;
 }
 .header-area{
    position: absolute;
@@ -186,18 +212,30 @@ footer,
    padding: .5em 0;
 }
 .header-area.sticky{
-   position: fixed;
    padding: .25em 0;
    background: #fff;
    box-shadow: 0 0 10px rgba(0, 0, 0, 0.16);
    animation: slideInDown .5s ease;
 }
+.position-fixed.sticky {
+	background: transparent;
+	box-shadow: 0 0;
+}
 
 .header-static {
-   position: static;
+   position: fixed;
 }
-.header-light {
-   
+
+.header-static ~ main {
+   margin-top: var(--header-height);
+}
+
+.h-append {
+   height: 400px;
+}
+
+.position-fixed {
+   position: fixed !important;
 }
 
 .mainmenu li{
@@ -221,6 +259,7 @@ footer,
   pointer-events: none;
   transition: .5s ease;
   z-index: 1000;
+  overflow: auto;
 }
 .offset-sidebar.active{
    opacity: 1;
@@ -232,25 +271,45 @@ footer,
 }
 .offset-menu a {
   color: #fff;
-  font-weight: 700;
-  font-size: 1.5em;
+  font-weight: 400;
+  font-size: 2em;
   padding-top: .8em;
   display: inline-block;
+  position: relative;
+}
+.offset-menu a::after {
+	content: '';
+	height: 2px;
+	width: 100%;
+	background: #fff;
+	display: block;
+	position: absolute;
+	top: 70%;
+	left: 0;
+	transform: translate(0,-50%);
+	transition: .5s;
+	width: 0;
+}
+.offset-menu a:hover::after {
+	width: 100%;
 }
 .offset-menu .colored-menu a {
   color: var(--theme-color);
+}
+.offset-menu .colored-menu a::after {
+   background: var(--theme-color);
 }
 .offset-menu .colored-menu {
   margin-top: 1.5em;
 }
 .offset-top {
 	margin-bottom: 4em;
-   padding-right: 3%;
+	padding-right: 0;
 }
 .close {
-   height: 1.3em;
-   width: 1.6em;
-  position: relative;
+	height: 1.7em;
+	width: 1.9em;
+	position: relative;
 }
 .close span {
   position: absolute;
@@ -264,9 +323,25 @@ footer,
 .close span:last-child {
   transform: translate(-50%) rotate(-45deg);
 }
+.offset-menu .colored-menu a::after {
+	display: none;
+}
 /*========== HEADER AREA// ==========*/
 
 /*========== HERO AREA ==========*/
+.hero-slide {
+	overflow: hidden;
+	position: relative;
+}
+.hero-bg > div {
+	width: 100%;
+   height: 100%;
+}
+.hero-bg img {
+	width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
 .site-btn {
    color: #fff;
    background: #000;
@@ -279,7 +354,7 @@ footer,
 .hero-content {
 	padding-top: 9em;
 	padding-bottom: 6em;
-   min-height: 100vh;
+   min-height: 100dvh;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
@@ -287,6 +362,9 @@ footer,
 .hero-content h4 {
 	font-family: inherit;
 	font-weight: 400;
+}
+.hero-content h1{
+   font-weight: 400;
 }
 .arrow {
 	width: 2.5em;
@@ -296,13 +374,17 @@ footer,
 }
  .arrow img {
    width: 100%;
-   animation: goRight 1.8s ease-in-out forwards infinite;
 }
+h1:hover .arrow img {
+   width: 100%;
+   animation: goRight 1.5s ease-in-out forwards infinite;
+}
+
  @keyframes goRight {
-   0%{transform: translate(-100%);}
-   40%{transform: translate(0%);}
-   80%{transform: translate(0%);}
-   100%{transform: translate(100%);}
+   0%{transform: translate(0%);}
+   40%{transform: translate(100%);}
+   40.5%{transform: translate(-100%);}
+   100%{transform: translate(0%);}
  }
  
 .hamberbar {
@@ -316,6 +398,7 @@ footer,
  .hamberbar span {
    height: 3px;
    background: #fff;
+   width: 100%;
  }
  .header-light .hamberbar span {
    background: #000000;
@@ -379,12 +462,11 @@ footer,
    border-radius: inherit;
  }
  .checkbox-model::after {
-   content: '\f00c';
-   font-family: "Font Awesome 5 Pro";
+   content: '';
    height: 100%;
    width: 100%;
    position: absolute;
-   background: #fff;
+   background: url('../img/tick.svg') no-repeat center center/60% 50%, #fff;
    border: 2px solid #7430B7;
    top: 0;
    left: 0;
@@ -449,6 +531,7 @@ footer,
    border: 1px solid #DCDCDC;
    border-radius: 5px;
    resize: none;
+   appearance: none;
 }
 .input-x:focus {
    border-color: #7430B7;
@@ -458,6 +541,9 @@ footer,
 }
 .input-x:focus::placeholder {
    color: transparent;
+}
+.input-x {
+   color: #5c5c5c;
 }
 .input-x--big {
    height: 150px;
@@ -469,6 +555,10 @@ footer,
    color: #fff;
    border-radius: 0;
    border-color: transparent;
+   transition: 0.3s;
+}
+.input-x--submit:hover {
+   background: #7430B7;
 }
 .check-label-x {
    gap: 25px;
@@ -522,14 +612,34 @@ footer,
 .footer-menu ul li:last-child {
    margin-bottom: 0;
 }
-.footer-menu ul li a {
+.footer-menu ul li a{
    font-size: 15px;
    transition: 0.3s;
    font-weight: 400;
-   color: #000;
+   color: #000 !important;
+   position: relative;
 }
-.footer-menu ul li a:hover {
-   color: #7430B7;
+.footer-menu ul li a::after {
+   content: '';
+   height: 1px;
+   width: 100%;
+   background: #000;
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 0;
+   transform: translate(0,-50%);
+   opacity: 0;
+   transition: 0.3s;
+}
+.footer-menu ul li a:hover::after {
+   opacity: 1;
+}
+.footer-menu ul li a.not-link {
+   cursor: unset;
+}
+.footer-menu ul li a.not-link::after {
+   display: none;
 }
 
 .footer-bottom {
@@ -548,8 +658,11 @@ footer,
 .gallery-section {
    padding: 100px 0 80px;
 }
+.gallery-section .container {
+   max-width: 1440px;
+}
 .gallery-section__inner {
-   padding: 0 5%;
+   padding: 0;
 }
 .gallery-section__title {
    padding: 0 5%;
@@ -582,7 +695,7 @@ footer,
 
 }
 .event-single__tmg {
-   height: 678px;
+   height: 400px;
 }
 .event-single__tmg .img {
 
@@ -608,4 +721,5 @@ footer,
 
 
 /*==========  ==========*/
+
 /*========== // ==========*/

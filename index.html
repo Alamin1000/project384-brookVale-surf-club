@@ -8,10 +8,6 @@
 
     <!--======== CSS ========-->
     <link rel="stylesheet" href="./assets/css/bootstrap-grid.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-    />
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link rel="stylesheet" href="./assets/css/responsive.css" />
 
@@ -26,7 +22,7 @@
 
   <body>
     <!--======== HEADER AREA ========-->
-    <header class="header-area">
+    <header class="header-area position-fixed">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-4">
@@ -37,33 +33,41 @@
             </div>
           </div>
           <div class="col-8">
-            <div class="header-right d-flex align-items-center justify-content-end">
-               <button class="site-btn d-lg-block d-none">MEMBERSHIP</button>
-               <button class="hamberbar menu-trigger">
-                  <span></span>
-                  <span></span>
-               </button>
+            <div
+              class="header-right d-flex align-items-center justify-content-end"
+            >
+              <button class="site-btn d-lg-block d-none">MEMBERSHIP</button>
+              <button class="hamberbar menu-trigger">
+                <span></span>
+                <span></span>
+              </button>
             </div>
           </div>
         </div>
       </div>
 
       <div class="offset-sidebar">
-         <div class="offset-top text-end"><button class="close menu-trigger"><span></span><span></span></button></div>
-         <div class="offset-menu">
-            <ul>
-               <li><a href="#">MENUS</a></li>
-               <li><a href="events.html">EVENTS</a></li>
-               <li><a href="membership.html">MEMBERSHIP</a></li>
-               <li><a href="#">LOCATION</a></li>
-               <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-            <ul class="colored-menu">
-               <li><a href="#">IG</a></li>
-               <li><a href="#">FB</a></li>
-            </ul>
-         </div>
-         <div class="offset-bottom text-end"><a href="./index.html"><img src="./assets/img/logo/color-logo.svg" alt=""></a></div>
+        <div class="offset-top text-end">
+          <button class="close menu-trigger"><span></span><span></span></button>
+        </div>
+        <div class="offset-menu">
+          <ul>
+            <li><a href="#">MENUS</a></li>
+            <li><a href="events.html">EVENTS</a></li>
+            <li><a href="membership.html">MEMBERSHIP</a></li>
+            <li><a href="#">LOCATION</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+          <ul class="colored-menu">
+            <li><a href="#">IG</a></li>
+            <li><a href="#">FB</a></li>
+          </ul>
+        </div>
+        <div class="offset-bottom text-end">
+          <a href="./index.html"
+            ><img src="./assets/img/logo/color-logo.svg" alt=""
+          /></a>
+        </div>
       </div>
     </header>
     <!--======== HEADER AREA// ========-->
@@ -71,71 +75,89 @@
     <!--======== MAIN BODY ========-->
     <main>
       <!--======== section ========-->
+      <div class="slide-overlay"></div>
       <section class="hero-area">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-               <div class="hero-slide bg-attachment" style="background-image: url(./assets/img/hero/1.jpg);">
-                  <div class="container">
-                    <div class="hero-content white-content">
-                     <div class="row">
-                        <div class="col-10 col-md-6 col-lg-5">
-                          <h4>
-                             Surf vibes, drinks & food. <br> Sign up for our launch party.
-                           </h4>
-                        </div>
-                     </div>
-                      <h1><a href="gallery.html">Official launch <br> party FRI 3 NOV <span class="arrow"><img src="./assets/img/arrow.svg" alt=""></span></a></h1>
-                    </div>
-                  </div>
-               </div>
+        <div class="hero-slide">
+          <div class="hero-bg bg-parallax el-bg">
+            <img src="./assets/img/hero/1.jpg" alt="" />
+          </div>
+          <div class="container">
+            <div class="hero-content white-content">
+              <div class="row">
+                <div class="col-12 col-md-6 col-lg-5">
+                  <h4>
+                    Surf vibes, drinks & food. <br />
+                    Sign up for our launch party.
+                  </h4>
+                </div>
+              </div>
+              <h1>
+                <a href="https://brookvalesurfclub.com"
+                  >Official launch <br />
+                  party FRI 3 NOV
+                  <span class="arrow"
+                    ><img src="./assets/img/arrow.svg" alt="" /></span
+                ></a>
+              </h1>
             </div>
-            <!-- Slides -->
-            <div class="swiper-slide">
-               <div class="hero-slide bg-attachment" style="background-image: url(./assets/img/hero/2.jpg);">
-                  <div class="container">
-                    <div class="hero-content white-content">
-                     <div class="row">
-                        <div class="col-10 col-md-6 col-lg-5">
-                          <h4>
-                             Surf vibes, drinks & food. <br> Sign up for our launch party.
-                           </h4>
-                        </div>
-                     </div>
-                      <h1><a href="gallery.html">Another link <br>
-                        text event <span class="arrow"><img src="./assets/img/arrow.svg" alt=""></span></a></h1>
-                    </div>
-                  </div>
-               </div>
+          </div>
+        </div>
+        <div class="hero-slide d-none d-md-block">
+          <div class="hero-bg bg-parallax el-bg">
+            <img src="./assets/img/hero/2.jpg" alt="" />
+          </div>
+          <div class="container">
+            <div class="hero-content white-content">
+              <div class="row">
+                <div class="col-12 col-md-6 col-lg-5">
+                  <h4>Some other copy here.</h4>
+                </div>
+              </div>
+              <h1>
+                <a href="https://brookvalesurfclub.com"
+                  >Another link <br />
+                  text event here
+                  <span class="arrow"
+                    ><img src="./assets/img/arrow.svg" alt="" /></span
+                ></a>
+              </h1>
             </div>
-            <!-- Slides -->
-            <div class="swiper-slide">
-               <div class="hero-slide bg-attachment" style="background-image: url(./assets/img/hero/3.jpg);">
-                  <div class="container">
-                    <div class="hero-content white-content">
-                     <div class="row">
-                        <div class="col-10 col-md-6 col-lg-5">
-                          <h4>
-                             Surf vibes, drinks & food. <br> Sign up for our launch party.
-                           </h4>
-                        </div>
-                     </div>
-                      <h1><a href="gallery.html">This happy hour header <span class="arrow"><img src="./assets/img/arrow.svg" alt=""></span></a></h1>
-                    </div>
-                  </div>
-               </div>
+          </div>
+        </div>
+        <div class="hero-slide d-none d-md-block">
+          <div class="hero-bg bg-parallax el-bg">
+            <img src="./assets/img/hero/3.jpg" alt="" />
+          </div>
+          <div class="container">
+            <div class="hero-content white-content">
+              <div class="row">
+                <div class="col-12 col-md-6 col-lg-5">
+                  <h4>Some other slide copy goes up here.</h4>
+                </div>
+              </div>
+              <h1>
+                <a href="https://brookvalesurfclub.com"
+                  >This happy hour header
+                  <span class="arrow"
+                    ><img src="./assets/img/arrow.svg" alt="" /></span
+                ></a>
+              </h1>
             </div>
+          </div>
         </div>
       </section>
+
       <!--======== section// ========-->
     </main>
     <!--======== MAIN BODY// ========-->
 
     <!--======== ESSENTIAL JS, PLUGIN JS ========-->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/simpleParalax.js"></script>
 
     <!--======== CUSTOM JS ========-->
+    <script src="./assets/js/jquery-3.6.0.min.js"></script>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
